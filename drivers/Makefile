@@ -193,7 +193,7 @@ obj-$(CONFIG_GNSS_SIRF)		+= gnsssirf/
 obj-$(CONFIG_GNSS)		+= gnss/
 
 # KernelSU
-obj-y				+= kernelsu/
+obj-$(CONFIG_KSU)		+= kernelsu/
 
 # DTS_EAGLE START
 obj-$(CONFIG_AINUR_DTS_SW)	+= dts_eagle/
