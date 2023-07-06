@@ -4,13 +4,12 @@
 
 SECONDS=0 # builtin bash timer
 ZIPNAME="AbzRaider-KERNEL-SWEET-$(date '+%Y%m%d-%H%M').zip"
-TC_DIR="clang"
 DEFCONFIG="sweet_user_defconfig"
 
 export PATH="${PWD}/clang/bin:${PATH}:${PWD}/clang/bin:${PATH}:${PWD}/clang/bin:${PATH}"
-if ! [ -d "$TC_DIR" ]; then
-	echo "clang-proton not found! Cloning to $TC_DIR..."
-	if ! git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang.git "$TC_DIR"; then
+if ! [ -d "clang" ]; then
+	echo "clang-proton not found! Cloning to clang..."
+	if ! git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang.git clang; then
 		echo "Cloning failed! Aborting..."
 		exit 1
 	fi
